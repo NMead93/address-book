@@ -47,7 +47,12 @@ namespace Address.Objects
             _address = address;
         }
 
-        public void SaveContact (Contact newContact)
+        public static List<Contact> GetContacts ()
+        {
+            return _contactList;
+        }
+
+        public static void SaveContact (Contact newContact)
         {
             _contactList.Add(newContact);
         }
