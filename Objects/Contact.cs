@@ -52,6 +52,16 @@ namespace Address.Objects
             return _contactList;
         }
 
+        public static Contact GetOneContact(string name)
+        {
+            return _contactList[name];
+        }
+
+        public static void ClearContacts ()
+        {
+            _contactList.Clear();
+        }
+
         public static void SaveContact (string name, Contact newContact)
         {
             _contactList.Add(name, newContact);

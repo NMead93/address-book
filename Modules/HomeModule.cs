@@ -26,16 +26,23 @@ namespace Address
                 return View["NewContact.cshtml"];
             };
 
-            // Get["/contact/{id}"] = parameters =>
-            // {
-            //
-            // }
+            Get["/contact/{name}"] = parameters =>
+            {
+                Contact currentContact = Contact.GetOneContact(parameters.name);
+                return View["contact.cshtml", currentContact];
+            };
 
             Post["/"] = _ =>
             {
                 Contact newContact = new Contact(Request.Form["name"], Request.Form["number"], Request.Form["address"]);
                 Contact.SaveContact(newContact.GetName(), newContact);
-                return View["index.cshtml", Contact.GetContacts()];
+                return View["confirm.cshtml", newContact];
+            };
+
+            Post["/contacts/clear"] = _ =>
+            {
+                Contact.ClearContacts();
+                return View["ConfirmClear.cshtml"];
             };
         }
     }

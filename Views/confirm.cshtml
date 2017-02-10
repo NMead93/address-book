@@ -1,0 +1,10 @@
+@{
+    Layout = "Shared/_Layout.cshtml";
+}
+
+<h1>You have made a new contact!</h1>
+<h2>Name: <span>@Model.GetName()</span></h2>
+<h2>Number: <span>@Model.GetNumber()</span></h2>
+<h2>Address: <span>@Model.GetAddress()</span></h2>
+
+<a href="/">Back to Home</a>
