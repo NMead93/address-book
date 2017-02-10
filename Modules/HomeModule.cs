@@ -9,7 +9,10 @@ namespace Address
     {
         public HomeModule()
         {
-
+            Get["/"] = _ =>
+            {
+                return View["index.cshtml"];
+            };
         }
     }
 }
