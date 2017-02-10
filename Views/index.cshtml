@@ -1,11 +1,11 @@
 @{
     Layout = "Shared/_Layout.cshtml";
 }
-@if (M)
+
 <ul>
-    @foreach (var contact in Model)
+    @foreach (var name in Model.Keys)
     {
-        <li><a href="/contact/@contact.GetName()">@contact.GetName()</a></li>
+        <li><a href="/contact/@name">@name</a></li>
     }
 </ul><br>
 

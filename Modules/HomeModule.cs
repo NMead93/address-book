@@ -17,7 +17,7 @@ namespace Address
                 }
                 else
                 {
-                    return View["index.cshtml"];
+                    return View["index.cshtml", Contact.GetContacts()];
                 }
             };
 
@@ -26,12 +26,16 @@ namespace Address
                 return View["NewContact.cshtml"];
             };
 
+            // Get["/contact/{id}"] = parameters =>
+            // {
+            //
+            // }
+
             Post["/"] = _ =>
             {
                 Contact newContact = new Contact(Request.Form["name"], Request.Form["number"], Request.Form["address"]);
-                Contact.SaveContact(newContact);
-                List<Contact> allContacts = Contact.GetContacts();
-                return View["index.cshtml", allContacts];
+                Contact.SaveContact(newContact.GetName(), newContact);
+                return View["index.cshtml", Contact.GetContacts()];
             };
         }
     }

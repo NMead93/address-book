@@ -8,7 +8,7 @@ namespace Address.Objects
         private string _name;
         private string _number;
         private string _address;
-        private static List<Contact> _contactList = new List<Contact> () {};
+        private static Dictionary<string, Contact> _contactList = new Dictionary<string, Contact> () {};
 
         public Contact (string name, string number, string address)
         {
@@ -47,14 +47,14 @@ namespace Address.Objects
             _address = address;
         }
 
-        public static List<Contact> GetContacts ()
+        public static Dictionary<string, Contact> GetContacts ()
         {
             return _contactList;
         }
 
-        public static void SaveContact (Contact newContact)
+        public static void SaveContact (string name, Contact newContact)
         {
-            _contactList.Add(newContact);
+            _contactList.Add(name, newContact);
         }
     }
 }
