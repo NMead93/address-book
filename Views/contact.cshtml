@@ -6,6 +6,10 @@
     <h2>Name: <span>@Model.GetName()</span></h2><br>
     <h2>Number: <span>@Model.GetNumber()</span></h2><br>
     <h2>Address: <span>@Model.GetAddress()</span></h2>
-</div>
+</div><br>
+
+<form action="/contact/@Model.GetName()/delete" method="post">
+    <button type="submit" name="button">Delete Contact</button>
+</form>
 
 <a href="/">Back to Home Page</a>

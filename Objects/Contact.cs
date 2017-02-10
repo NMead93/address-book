@@ -57,6 +57,11 @@ namespace Address.Objects
             return _contactList[name];
         }
 
+        public static void ClearOneContact(string name)
+        {
+            _contactList.Remove(name);
+        }
+
         public static void ClearContacts ()
         {
             _contactList.Clear();

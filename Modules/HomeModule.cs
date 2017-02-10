@@ -39,6 +39,12 @@ namespace Address
                 return View["confirm.cshtml", newContact];
             };
 
+            Post["/contact/{name}/delete"] = parameters =>
+            {
+                Contact.ClearOneContact(parameters.name);
+                return View["delete.cshtml"];
+            };
+
             Post["/contacts/clear"] = _ =>
             {
                 Contact.ClearContacts();
