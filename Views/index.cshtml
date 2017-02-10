@@ -1,13 +1,15 @@
 @{
     Layout = "Shared/_Layout.cshtml";
 }
-
-<ul>
-    @foreach (var name in Model.Keys)
-    {
-        <li><a href="/contact/@name">@name</a></li>
-    }
-</ul><br>
+<div id="list">
+    <ul v-if="seen">
+        @foreach (var name in Model.Keys)
+        {
+            <li><a href="/contact/@name">@name</a></li>
+        }
+    </ul><br>
+    <button class="btn btn-info" v-on:click="seen = !seen">Show/Hide Contacts</button>
+</div>
 
 <a href="/new">Add New Contact</a><br>
 <form action="/contacts/clear" method="post">

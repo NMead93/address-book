@@ -1,20 +1,15 @@
-var newName = new Vue({
-    el: '#new-name',
+var example = new Vue({
+    el: '#example',
     data: {
-        message: 'Name'
+        name: 'Name',
+        number: "Number",
+        address: "Address"
     }
 })
 
-var newNumber = new Vue({
-    el: '#new-number',
+var list = new Vue({
+    el: '#list',
     data: {
-        message: 'Number'
-    }
-})
-
-var newAddress = new Vue({
-    el: '#new-address',
-    data: {
-        message: 'Address'
+        seen: true
     }
 })

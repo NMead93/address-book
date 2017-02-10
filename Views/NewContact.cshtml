@@ -4,23 +4,20 @@
 
 <form  action="/" method="post">
     <div class="form-group">
-        <div id="new-name">
-            <h2>{{ message }}</h2>
+        <div id="example">
+            <h2>{{ name }}</h2>
+            <h2>{{ number }}</h2>
+            <h2>{{ address }}</h2>
             <label for="name">Enter Name: </label>
-            <input v-model="message" type="text" name="name" id="name">
-        </div>
-
-        <div id="new-number">
-            <h2>{{ message }}</h2>
+            <input v-model="name" type="text" name="name" id="name" class="form-control">
             <label for="number">Enter Number: </label>
-            <input v-model="message" type="text" name="number" id="number">
+            <input v-model="number" type="text" name="number" id="number" class="form-control">
+            <label for="address">Enter Address: </label>
+            <input v-model="address" type="text" name="address" id="address" class="form-control">
         </div>
 
-        <div id="new-address">
-            <h2>{{ message }}</h2>
-            <label for="address">Enter Address: </label>
-            <input v-model="message" type="text" name="address" id="address">
-        </div>
+
+
         <button type="submit" name="button">Create Contact</button>
     </div>
 </form>
