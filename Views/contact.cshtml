@@ -2,14 +2,27 @@
     Layout = "Shared/_layout.cshtml";
 }
 
-<div class="">
-    <h2>Name: <span>@Model.GetName()</span></h2><br>
+
+<ul class="collapsible popout collapsible-accordion" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active">@Model.GetName()</div>
+      <div class="collapsible-body"><span>@Model.GetName()</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">@Model.GetNumber()</div>
+      <div class="collapsible-body"><span>@Model.GetNumber()</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">@Model.GetAddress()</div>
+      <div class="collapsible-body"><span>@Model.GetAddress()</span></div>
+    </li>
+</ul>
+    <!-- <h2>Name: <span>@Model.GetName()</span></h2><br>
     <h2>Number: <span>@Model.GetNumber()</span></h2><br>
-    <h2>Address: <span>@Model.GetAddress()</span></h2>
-</div><br>
+    <h2>Address: <span>@Model.GetAddress()</span></h2> -->
 
 <form action="/contact/@Model.GetName()/delete" method="post">
-    <button type="submit" name="button">Delete Contact</button>
+    <button type="submit" name="button" class="btn">Delete Contact</button><br>
 </form>
 
-<a href="/">Back to Home Page</a>
+<a class="waves-effect waves-light btn-large" href="/">Go Back Home</a>

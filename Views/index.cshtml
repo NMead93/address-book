@@ -2,16 +2,17 @@
     Layout = "Shared/_Layout.cshtml";
 }
 <div id="list">
+
     <ul v-if="seen">
         @foreach (var name in Model.Keys)
         {
-            <li><a href="/contact/@name">@name</a></li>
+            <li><a class="btn" href="/contact/@name">@name</a></li>
         }
     </ul><br>
     <button class="btn btn-info" v-on:click="seen = !seen">Show/Hide Contacts</button>
 </div>
 
-<a href="/new">Add New Contact</a><br>
+<a class="btn-floating btn-large waves-effect waves-light red" href="/new"><i class="material-icons">+</i></a><br>
 <form action="/contacts/clear" method="post">
-    <button type="submit" name="button">Clear Contacts</button>
+    <button type="submit" name="button" class="btn">Clear Contacts</button>
 </form>

@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="Content/css/styles.css">
         <meta charset="utf-8">
         <title>Address Book</title>
     </head>
     <body>
         <div class="container">
+            <nav>
+                <div class="nav-wrapper">
+                  <a href="/" class="brand-logo">Epicodus Address Book</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                  </ul>
+                </div>
+              </nav>
             @RenderBody()
         </div>
         <script src="~/Content/scripts.js" charset="utf-8"></script>
